@@ -2,7 +2,7 @@ GET
 
 <img width="1742" height="806" alt="GETsucces" src="https://github.com/user-attachments/assets/1a305364-c0fb-405c-afd1-20334c382fcf" />
 
-<img width="1761" height="596" alt="GETnotfound" src="https://github.com/user-attachments/assets/7eefbc5a-a585-4e0f-a253-a92ef1719b9c" 
+<img width="1761" height="596" alt="GETnotfound" src="https://github.com/user-attachments/assets/7eefbc5a-a585-4e0f-a253-a92ef1719b9c" />
 
 
 POST
@@ -13,7 +13,7 @@ POST
 
 PUT
 
-<img width="1797" height="822" alt="PUTsuccessfull" src="https://github.com/user-attachments/assets/42aca13f-5645-4052-b973-4a2a8458edf2" 
+<img width="1797" height="822" alt="PUTsuccessfull" src="https://github.com/user-attachments/assets/42aca13f-5645-4052-b973-4a2a8458edf2" />
   
 <img width="1750" height="657" alt="PUTconflict" src="https://github.com/user-attachments/assets/6d225481-3b20-4fc5-886d-ec0d73ebfd01" />
 
