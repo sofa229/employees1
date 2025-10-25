@@ -1,7 +1,7 @@
 package sk.ukf.employees.entity;
 
 import jakarta.persistence.*;
-
+import jakarta.validation.constraints.*;
 import java.time.LocalDate;
 
 @Entity
@@ -10,15 +10,44 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
 
+    @NotBlank(message = "Meno je povinné")
+    @Size(min = 2, max = 50, message = "Meno musí mať 2-50 znakov")
+    @Column(name = "first_name")
     private String firstName;
+
+    @NotBlank(message = "Priezvisko je povinné")
+    @Size(min = 2, max = 50, message = "Priezvisko musí mať 2-50 znakov")
+    @Column(name = "last_name")
     private String lastName;
+
+    @Past(message = "Dátum narodenia musí byť v minulosti")
+    @Column(name = "birth_date")
     private LocalDate birthDate;
+
+    @NotBlank(message = "Email je povinný")
+    @Email(message = "Neplatný email")
+    @Column(name = "email", unique = true)
     private String email;
+
+    @Pattern(regexp = "^\\+?[0-9\\s-]{9,15}$", message = "Neplatné telefónne číslo")
+    @Column(name = "phone")
     private String phone;
+
+    @NotBlank(message = "Pracovná pozícia je povinná")
+    @Size(min = 2, max = 100, message = "Pracovná pozícia musí mať 2-100 znakov")
+    @Column(name = "job_title")
     private String jobTitle;
+
+    @NotNull(message = "Plat je povinný")
+    @DecimalMin(value = "0.0", inclusive = false, message = "Plat musí byť kladné číslo")
+    @Column(name = "salary")
     private Double salary;
+
+    @NotNull(message = "Typ úväzku je povinný (true/false)")
+    @Column(name = "full_time")
     private Boolean fullTime;
 
     public Employee() {
@@ -48,6 +77,8 @@ public class Employee {
         this.salary = salary;
         this.fullTime = fullTime;
     }
+
+    // Gettre a settre
 
     public int getId() {
         return id;
@@ -127,7 +158,7 @@ public class Employee {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", birthDate='" + birthDate + '\'' +
+                ", birthDate=" + birthDate +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", jobTitle='" + jobTitle + '\'' +
